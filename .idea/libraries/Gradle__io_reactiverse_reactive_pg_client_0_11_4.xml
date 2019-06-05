@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.reactiverse:reactive-pg-client:0.11.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactiverse/reactive-pg-client/0.11.4/3a9403c0bf0325b4377b8e923ac1882492f34dd8/reactive-pg-client-0.11.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactiverse/reactive-pg-client/0.11.4/66273a88e419182bae7321fe009c5d4ec109b59d/reactive-pg-client-0.11.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
