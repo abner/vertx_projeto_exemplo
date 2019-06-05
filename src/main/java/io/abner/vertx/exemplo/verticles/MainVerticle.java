@@ -33,6 +33,9 @@ public class MainVerticle extends AbstractVerticle {
     // instantiate a DAO (which is generated for you)
     CarneLeaoDao dao = new CarneLeaoDao(configuration, client);
 
+    // https://medium.com/@mingyulin_23146/jooq-converter-and-binding-for-jsonb-array-using-gradle-7969d6f6218f
+// https://stackoverflow.com/questions/54559904/how-to-convert-from-jsonb-in-jooq-3-11
+
     dao.insert(
             new CarneLeao()
                 .setCpf("80129498572")
