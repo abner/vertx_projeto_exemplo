@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/projeto-exemplo.iml" filepath="$PROJECT_DIR$/projeto-exemplo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/custom-vertx-jooq-generator/projeto-exemplo.custom-vertx-jooq-generator.iml" filepath="$PROJECT_DIR$/.idea/modules/custom-vertx-jooq-generator/projeto-exemplo.custom-vertx-jooq-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/custom-vertx-jooq-generator/projeto-exemplo.custom-vertx-jooq-generator.main.iml" filepath="$PROJECT_DIR$/.idea/modules/custom-vertx-jooq-generator/projeto-exemplo.custom-vertx-jooq-generator.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/custom-vertx-jooq-generator/projeto-exemplo.custom-vertx-jooq-generator.test.iml" filepath="$PROJECT_DIR$/.idea/modules/custom-vertx-jooq-generator/projeto-exemplo.custom-vertx-jooq-generator.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/projeto-exemplo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/projeto-exemplo.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/projeto-exemplo.test.iml" filepath="$PROJECT_DIR$/.idea/modules/projeto-exemplo.test.iml" />
     </modules>

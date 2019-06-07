@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":custom-vertx-jooq-generator" external.linked.project.path="$MODULE_DIR$/../../../custom-vertx-jooq-generator" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="projeto-exemplo" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../custom-vertx-jooq-generator">
+      <excludeFolder url="file://$MODULE_DIR$/../../../custom-vertx-jooq-generator/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../custom-vertx-jooq-generator/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

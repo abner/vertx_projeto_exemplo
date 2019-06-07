@@ -8,3 +8,5 @@
  */
 
 rootProject.name = 'projeto-exemplo'
+
+include 'custom-vertx-jooq-generator'

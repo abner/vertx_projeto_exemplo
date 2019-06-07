@@ -2,6 +2,7 @@ package io.abner.vertx.exemplo.jooq;
 
 import io.vertx.core.json.JsonObject;
 import org.jooq.*;
+import org.jooq.conf.ParamType;
 import org.jooq.impl.DSL;
 
 import java.sql.SQLException;
@@ -14,13 +15,32 @@ import java.util.Objects;
  */
 public class ObjectToJsonObjectBinding implements Binding<Object, JsonObject> {
 
-    private static final Converter<Object, JsonObject> CONVERTER = new JsonbConverter();
 
-    // The converter does all the work
     @Override
     public Converter<Object, JsonObject> converter() {
-        return CONVERTER;
+        return new Converter<Object, JsonObject>() {
+            @Override
+            public JsonObject from(Object t) {
+                return t == null ? null : new JsonObject("" + t);
+            }
+
+            @Override
+            public Object to(JsonObject u) {
+                return u == null ? null : u.encode();
+            }
+
+            @Override
+            public Class<Object> fromType() {
+                return Object.class;
+            }
+
+            @Override
+            public Class<JsonObject> toType() {
+                return JsonObject.class;
+            }
+        };
     }
+
 
     // Rending a bind variable for the binding context's value and casting it to the json type
     @Override
@@ -29,9 +49,11 @@ public class ObjectToJsonObjectBinding implements Binding<Object, JsonObject> {
         // between jOOQ generating bind variables or inlined literals. If so, use this check:
         // ctx.render().paramType() == INLINED
         RenderContext context = ctx.render().visit(DSL.val(ctx.convert(converter()).value()));
-        if (SQLDialect.POSTGRES.equals(ctx.configuration().dialect().family()))
-        {
-            context.sql("::jsonb");
+        if (SQLDialect.POSTGRES.equals(ctx.configuration().dialect().family())) {
+            if (ctx.render().paramType() == ParamType.INLINED)
+                ctx.render().visit(DSL.inline(ctx.convert(converter()).value())).sql("::jsonb");
+            else
+                ctx.render().sql("?::jsonb");
         }
     }
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":custom-vertx-jooq-generator:main" external.linked.project.path="$MODULE_DIR$/../../../custom-vertx-jooq-generator" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="projeto-exemplo" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+    <output url="file://$MODULE_DIR$/../../../custom-vertx-jooq-generator/build/classes/java/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../custom-vertx-jooq-generator/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../custom-vertx-jooq-generator/src/main/java" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.9" level="project" />
+    <orderEntry type="library" name="Gradle: io.github.jklingsporn:vertx-jooq-generate:4.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jooq:jooq-codegen:3.11.11" level="project" />
+    <orderEntry type="library" name="Gradle: org.jooq:jooq-meta:3.11.11" level="project" />
+    <orderEntry type="library" name="Gradle: io.github.jklingsporn:vertx-jooq-shared:4.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jooq:jooq:3.11.11" level="project" />
+    <orderEntry type="library" name="Gradle: io.vertx:vertx-core:3.6.3" level="project" />
+    <orderEntry type="library" name="Gradle: javax.xml.bind:jaxb-api:2.2.12" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-http2:4.1.30.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.1.30.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-handler-proxy:4.1.30.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-resolver-dns:4.1.30.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.1.30.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-socks:4.1.30.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-dns:4.1.30.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.1.30.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport:4.1.30.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.30.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-resolver:4.1.30.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-common:4.1.30.Final" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.8" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.8" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
+  </component>
+</module>

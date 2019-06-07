@@ -15,6 +15,7 @@ plugins {
     // plugin para carregamento e geração de classes do jooq
     id 'nu.studer.jooq' version '3.0.3'
 
+    id "org.flywaydb.flyway" version "6.0.0-beta2"
 
 }
 
@@ -31,7 +32,9 @@ ext {
     junitJupiterEngineVersion = '5.4.0'
 }
 
-
+configurations {
+    flywayMigration
+}
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
@@ -41,6 +44,7 @@ dependencies {
     compile('io.reactiverse:reactive-pg-client:0.11.4')
     compile ('org.jooq:jooq')
     compile ("io.github.jklingsporn:vertx-jooq-rx-reactive:$vertJOOQVersion")
+    compile ('io.github.jklingsporn:vertx-jooq-generate:4.1.0')
 
     compile("io.vertx:vertx-core:$vertxVersion")
     compile("io.vertx:vertx-web:$vertxVersion")
@@ -50,12 +54,15 @@ dependencies {
 
     // dependencia para o driver que será utilizado pelo JOOQ para conexão com o banco de dados
     jooqRuntime 'postgresql:postgresql:9.1-901.jdbc4'
+    flywayMigration "postgresql:postgresql:9.1-901.jdbc4"
 
     // jooqRuntime 'org.postgresql:postgresql:42.1.4'
 
     jooqRuntime("io.github.jklingsporn:vertx-jooq-rx-async:$vertJOOQVersion")
     // compile "io.github.jklingsporn:vertx-jooq-rx-async:$vertJOOQVersion"
     jooqRuntime("io.github.jklingsporn:vertx-jooq-generate:$vertJOOQVersion")
+
+    jooqRuntime project(':custom-vertx-jooq-generator')
 
     // https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api
     compile group: 'javax.annotation', name: 'javax.annotation-api', version: '1.3.2'
@@ -64,6 +71,18 @@ dependencies {
 
 // Define the main class for the application
 mainClassName = 'io.abner.vertx.exemplo.App'
+
+flyway {
+    url = 'jdbc:postgresql://localhost:5432/projeto_exemplo'
+    user = 'root'
+    password = 'r3dfr0g'
+    schemas = ['public']
+    placeholders = [
+            'keyABC': 'valueXYZ',
+            'otherplaceholder': 'value123'
+    ]
+    configurations = [ 'compile', 'flywayMigration' ]
+}
 
 jooq {
     version = '3.11.11' // the default (can be omitted)
@@ -83,10 +102,12 @@ jooq {
             }
         }
         generator {
-            name = 'io.github.jklingsporn.vertx.jooq.generate.rx.RXReactiveVertxGenerator'
+            name = 'io.abner.vertx.exemplo.jooq.generator.CustomVertxGenerator'
+            // name = 'io.github.jklingsporn.vertx.jooq.generate.rx.RXReactiveVertxGenerator'
             //name = 'io.github.jklingsporn.vertx.jooq.generate.completablefuture.CompletableFutureAsyncVertxGenerator'
             strategy {
                 name = 'io.github.jklingsporn.vertx.jooq.generate.VertxGeneratorStrategy'
+                // name = 'io.github.jklingsporn.vertx.jooq.generate.rx.RXReactiveVertxGenerator'
                 // ...
             }
             database {
@@ -95,23 +116,25 @@ jooq {
                 forcedTypes {
                     // How to bind jsonb to JsonObject -> https://www.jooq.org/doc/3.11/manual/code-generation/custom-data-type-bindings/
                      forcedType {
-                       userType = 'io.vertx.core.json.JsonObject'
-                       converter = 'io.abner.vertx.exemplo.jooq.JsonbConverter'
+                         userType = 'io.vertx.core.json.JsonObject'
+                         converter = 'io.abner.vertx.exemplo.jooq.JsonbConverter'
                          // binding ='io.abner.vertx.exemplo.jooq.ObjectToJsonObjectBinding'
-                       // expression = 'conteudo'
-                       types = 'jsonb?'
+                         // expression = 'conteudo'
+                         types = 'JSONB'
+                        // types = '.*'
+
 
                      }
-                     forcedType {
-                       name = 'varchar'
-                       expression = '.*'
-                       types = 'JSONB?'
-                     }
-                    forcedType {
-                        name = 'varchar'
-                        expression = '.*'
-                        types = 'INET'
-                    }
+//                     forcedType {
+//                       name = 'varchar'
+//                       expression = '.*'
+//                       types = 'JSONB?'
+//                     }
+//                    forcedType {
+//                        name = 'varchar'
+//                        expression = '.*'
+//                        types = 'INET'
+//                    }
                 }
                 // ...
             }

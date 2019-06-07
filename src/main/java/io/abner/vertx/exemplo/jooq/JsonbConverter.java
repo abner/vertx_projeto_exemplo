@@ -25,4 +25,6 @@ public class JsonbConverter extends AbstractConverter<Object, JsonObject> {
     public Object to(JsonObject userObject) {
         return Json.create(userObject);
     }
+
+
 }

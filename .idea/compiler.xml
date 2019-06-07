@@ -2,6 +2,10 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="projeto-exemplo.buildSrc.main" target="11" />
+      <module name="projeto-exemplo.buildSrc.test" target="11" />
+      <module name="projeto-exemplo.custom-vertx-jooq-generator.main" target="11" />
+      <module name="projeto-exemplo.custom-vertx-jooq-generator.test" target="11" />
       <module name="projeto-exemplo.main" target="11" />
       <module name="projeto-exemplo.test" target="11" />
     </bytecodeTargetLevel>
